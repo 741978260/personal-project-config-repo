@@ -1,2 +1,33 @@
 neo:
   hello: '{cipher}f16ac132e2913b7c2150c22e9e44d9a51a57bafd31720826493007a2d8234457'
+spring:
+  datasource:
+    druid:
+      filters: stat,wall
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      useGlobalDataSourceStat: true
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      validation-query: SELECT 1
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*Mapper.xml
+  typeAliasesPackage: com.vcredit.boltloan.model
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    jdbc-type-for-null: null
+
