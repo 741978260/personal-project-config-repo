@@ -30,7 +30,5 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     jdbc-type-for-null: null
-hello:
-  msg: cailin
-  show: true
+
 
